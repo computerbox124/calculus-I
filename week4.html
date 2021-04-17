@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+<meta charset="UTF-8">
+<title>Calculus I</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="stylesheet" href="css/main.css">
+<style>
+ table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+ }
+ th, td {
+  padding: 5px;
+ }
+ th {
+  text-align: left;
+ }
+
+ .solutions {
+   display: none;
+   padding-top: 25px;
+ }
+</style>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script>
+MathJax = {
+  tex: {inlineMath: [['$', '$'], ['\\(', '\\)']]}
+};
+</script>
+
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+<body>
+
+<!--<img src="img_la.jpg" alt="LA" style="width:100%">
+
+<div class="">
+<h1>This is a Heading</h1>
+<p>This is a paragraph.</p>
+<p>This is another paragraph.</p>
+</div>
+
+-->
+
+<div class="wrapper">
+  <button><a href="index.html">Back</a></button>
+  <div class="body">
+    <h1 style="margin-left: 490px;">Calculus I course</h1>
+    <h2 style="margin-left: 150px;">Week 4: Tangents and the Derivative at a Point; The Derivative as a
+Function; Differentiation Rules; Derivative as a rate of
+change; Derivatives of Trigonometric Functions</h2>
+    <h3 style="margin-left: 545px;">Chapters:3.1-3.5</h3>
+    <br>
+    <h4>Content overview</h4>
+    <ul>
+     <li><a href="#topic1">3.1 Tangents and the Derivative at a Point</a></li>
+     <ul>
+       <li><a href="#">Finding a Tangent to the Graph of a Function</a></li>
+       <li><a href="#">Rates of Change: Derivative at a Point</a></li>
+       <li><a href="#">Vertical Tangents</a></li>
+     </ul>
+     <li><a href="#topic2">3.2 The Derivative as a Function</a></li>
+     <ul>
+       <li><a href="#">Derivative at a point, Derivative as a function.</a></li>
+       <li><a href="#">Calculating Derivatives from the Definition</a></li>
+       <li><a href="#">Notation</a></li>
+       <li><a href="#">Graphing the Derivative</a></li>
+       <li><a href="#">Differentiable on an Interval;One-Sided Derivatives</a></li>
+       <li><a href="#">When Does a Function Not Have a Derivative at a Point?</a></li>
+     </ul>
+     <li><a href="#">3.3 Differentiation Rules</a></li>
+     <li><a href="#">3.4 The Derivative as a Rate of Change</a></li>
+     <li><a href="#">3.5 Derivative of Trigonometric Functions</a></li>
+    </ul>
+    <br>
+    <div id="topic1">
+     <h4 style="margin-left: 450px;"><b>3.1 Tangents and the Derivative at a Point</b></h4>
+     <br>
+     <b><h4 style="color:blue; ">Finding a Tangent to the Graph of a Function</h4></b>
+     <div class="box">
+      <b><h3 style="color:blue;">DEFINITIONS</h3></b>
+      <p>
+        The <b>slope of the curve</b> y = f(x) at the point P($x_0$,f($x_0$)) is the number<br><br>
+         $m$ = $lim_{h \to 0}$ $\dfrac{f(x_0+h)-f(x_0)}{h}$  (provided the limit exists)<br>
+         The <b>tangent line</b> to the curve at P is the line through P with this slope
+
+      </p>
+     </div>
+     <img src='img\week4_1.png'></img>
+     <br>
+     <div class="example">
+      <h3>Example 1</h3>
+      <p>
+       (a) Find the slope of the curve $y = \dfrac{1}{x}$ at x = a$\not$=0. What is the slope at the point x=-1?<br>
+       (b) Where does the slope equal -$\dfrac{1}{4}$? <br>
+       (c) What happens to the tangent to the curve at the point ($a$,$1/a$) as $a$ changes
+      </p>
+      <button onclick="myFunction()">Show the solutions</button>
+      <div class="solutions" id="solutions1">
+       Solutions
+      </div>
+     </div>
+ <br>
+
+ <b><h4 style="color:blue;">Rates of Change: Derivative at a Point</h3></b>
+ <div class="box">
+  <b><h3 style="color:blue; ">DEFINITION</h3></b>
+  <p>
+    The <b>derivative of a function $f$ at a point $x_0$</b>, denoted $f'(x_0)$ , is,<br>
+    <br>
+    $f'(x_0)$ = $lim_{h \to 0}$ $\dfrac{f(x_0+h)-f(x_0)}{h}$ <br>
+
+    provided this limit exists.
+  </p>
+ </div>
+ <br>
+ <div class="example">
+  <h4 style="color: blue">
+  Example 2:
+  </h4>
+  <p>
+   $f(t)$ = $16t^2$ The average speed of the rock over the interval beween t=1 and t=1+h seconds, for h>0:<br><br>
+    $\dfrac{f(1+h)-f(1)}{h}$ = $\dfrac{16(1+h)^2-16(1)^2}{h}$ = $\dfrac{16(h^2+2h)}{h}$ = $16(h+2)$ <br><br>
+   The rock's speed at the instant $t=1$ is then
+   $lim_{h \to 0}$ $16(h+2)$ = $16(0+2)$ = 32
+  </p>
+ </div>
+
+<div class="summary">
+  <h4 style="color: blue">
+   Summary
+  </h4>
+  <div style="border: 2px solid black;width: 900px;padding: 10px;">
+   <p>
+    The following are all interpretations for the limit of the different quotient,<br><br>
+    $lim_{h \to 0}$ $\dfrac{f(x_0+h)-f(x_0)}{h}$ <br>
+    <ol>
+     <li>The slope of the graph of $y = f(x)$ at $x$ = $x_0$</li>
+     <li>The slope of the tangent to the curve y = f(x)</li>
+     <li>The rate of change of $f(x)$ with respect to $x$ at $x$ = $x_0$</li>
+     <li>The derivative $f'(x_0)$ at a point</li>
+    </ol>
+   </p>
+  </div>
+ </div>
+ <br>
+ <div class="example">
+   <h3>Example 3</h3>
+   <p>
+    Find an equation for the tangent to the curve at the given point. Then sketch the curve and tangent together.<br>
+    $y = 4-x^2$ (-1,3)
+   </p>
+   <button onclick="myFunction1()">Show the solution</button>
+   <div class="solutions" id="solutions2">
+     Solutions
+   </div>
+ </div>
+ <br>
+ <div class="example">
+  <h3>Example 4</h3>
+  <p>
+   Find an equation of the straight line having slope 1/4 that is tangent to the curve $y = sqrt(x)$.<br>
+   $y = 4-x^2$ (-1,3)
+  </p>
+  <button onclick="myFunction2()">Show the solution</button>
+  <div class="solutions" id="solutions3">
+    Solutions
+  </div>
+ </div>
+ <div class="example">
+  <h3>Example 5</h3>
+  <p>
+    <b>Circle's changing area</b> What is the rate of change of the area of a circle ( $A = \pi\ r^2$ ) <br>
+    with respect to the radius when the radius is $r=3$ ?
+  </p>
+  <button onclick="myFunction3()">Show the solution</button>
+  <div class="solutions" id="solutions4">
+    Solutions
+  </div>
+ </div>
+ <div class="example">
+  <h3>Example 6</h3>
+  <p>
+    <b>Speed of a rocket</b> At $t$  sec after liftoff, the height of a rocket is $3t^2$ ft.<br>
+    How fast is the rocket climbing 10 sec after liftoff?
+  </p>
+  <button onclick="myFunction3()">Show the solution</button>
+  <div class="solutions" id="solutions5">
+    Solutions
+  </div>
+ </div>
+ <b><h4 style="color:blue;">Vertical Tangents</h3></b>
+ <p>
+  We say that a continuous curve y = f(x) has a <b>vertical tangent</b> at the point where $x = x_0$
+  if $lim_{h \to 0}$ $\dfrac{f(x_0+h)-f(x_0)}{h}$ = $\infty\ $ or  -$\infty\ $ . </b>
+  For example , $y$ = $x^{1/3}$ has a vertical tangent at x = 0 (see accompanying figure): <br><br>
+  $lim_{h \to 0}$ $\dfrac{f(x_0+h)-f(x_0)}{h}$ = $lim_{h \to 0}$ $\dfrac{h^{1/3}-0}{h}$ <br>
+   = $lim_{h \to 0}$ $\dfrac{1}{h^{2/3}}$
+ </p>
+ <img src='img\week4_2.png'></img>
+ <br>
+ <p>
+  However , $y = x^{2/3}$ has <i>no</i> vertical tangent at x = 0 (see next figure):<br><br>
+  $lim_{h \to 0}$ $\dfrac{g(0+h)-g(0)}{h}$ = $lim_{h \to 0}$ $\dfrac{h^{2/3}-0}{h}$ <br>
+   = $lim_{h \to 0}$ $\dfrac{1}{h^{1/3}}$ <br><br>
+  does not exist , because the limit is $\infty\ $ from the riht and -$\infty\ $ from the left.
+ </p>
+ <img src='img\week4_3.png'></img>
+
+</div>
+
+<div id="topic2">
+  <h4 style="margin-left: 450px;"><b>3.2 The Derivative as a Function</b></h4>
+  <br>
+  <b><h4 style="color:blue; ">Derivative at a point, Derivative as a function.</h4></b>
+  <p>
+   In the last section we defined the derivative of $y = f(x)$ at the point $x = x_0$ to be the limit<br>
+   $f'(x_0)$ = $lim_{h \to 0}$ $\dfrac{f(x_0+h)-f(x_0)}{h}$ <br><br>
+   <em>Derivative as a function</em> derived from $f$ by consediring the limit at each point $x$ <br>
+   in the domain of $f$.
+  </p>
+  <br>
+  <div class="box">
+   <b><h3 style="color:blue;">DEFINITION</h3></b>
+   <p>
+     The <b>derivative</b> of the funtion $f(x)$ with respect to the variable x is the function $f'$ whose value at x is<br><br>
+     $f'(x)$ = $lim_{h \to 0}$ $\dfrac{f(x+h)-f(x)}{h}$ , <br>
+     proved the limit exists.
+   </p>
+  </div>
+  <br>
+  <div style="border: 2px solid black;width: 900px;padding: 10px;">
+   <p>
+     <b><h3 style="color:blue;">Alternative Formula for the Derivative</h3></b>
+     $f'(x)$ = $lim_{z \to x}$ $\dfrac{f(z)-f(x)}{z-x}$ ,
+   </p>
+  </div>
+  <img src='img\week4_4.png'></img>
+  <br>
+  <b><h4 style="color:blue; ">Calculating Derivatives from the Definition</h4></b>
+  <p>
+   The process of calculating a derivative is called differentiation.<br><br>
+   Example: <br><br>
+   $\dfrac{d}{dx}(\dfrac{1}{x})$ = $-\dfrac{1}{x^2}$, $x\not$=0<br><br><br><br><br>
+   $\dfrac{d}{dx}f(x)$ &nbsp; &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;$f'(x)$ = $lim_{h \to 0}$ $\dfrac{f(x+h)-f(x)}{h}$ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; $f'(x)$ = $lim_{z \to x}$ $\dfrac{f(z)-f(x)}{z-x}$
+  </p>
+  <br>
+  <div class="example">
+   <h3>Example 7</h3>
+   <p>
+     (a) Find the derivative of $f(x) = \sqrt{x}$ for $x > 0$.<br>
+     (b) Find the tangent line to the curve $y = \sqrt{x}$ at $x = 4$.
+   </p>
+   <button onclick="myFunction5()">Show the solution</button>
+   <div class="solutions" id="solutions6">
+    Solutions
+   </div>
+  </div>
+  <br>
+  <b><h4 style="color:blue; ">Notation</h4></b>
+  <p>
+   $f'(x) = y' = \dfrac{dy}{dx} = \dfrac{df}{dx} = \dfrac{d}{dx}f(x) = D(f)(x) = D_xf(x)$ <br><br>
+   The "prime" notations $y'$ and $f'$ come from notations that Newton used for derivatives.<br>
+   The d/dx notations are similar to those used by Leibniz.<br><br>
+   To indicate the value of a derivative at a specified number $x = a$ ,we use notation<br>
+   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; $f'(a) = \left. \dfrac{dy}{dx} \right| _{x=a}\ $  = $\left. \dfrac{df}{dx} \right| _{x=a}\ $ = $\left. \dfrac{d}{dx}f(x) \right| _{x=a}\ $<br><br>
+   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; $f'(4) = \left. \dfrac{d}{dx}\sqrt{x} \right| _{x=4}\ $ = $\left. \dfrac{1}{2\sqrt{x}} \right| _{x=4}\ $ = $\dfrac{1}{2\sqrt4} = \dfrac{1}{4}$
+  </p>
+  <br>
+  <b><h4 style="color:blue; ">Graphing the Derivative</h4></b>
+  <p>
+   We can often make a resonable plot of the derivative of $y = f(x)$ by estimating the slopes on the graph of $f$.
+  </p>
+  <img src='img\week4_5.png'></img>
+  <br>
+  <b><h3 style="color:blue; ">Exercise</h3></b>
+  <b><h4 style="color:blue; ">Relationship between the graph of a function and its derivative</h4></b>
+  <p>Math the fuctions with the derivatives</p>
+  <img src='img\week4_6.png'></img>
+  <br>
+  <button onclick="myFunction6()">Show the solution</button>
+  <div class="solutions" id="solutions7">
+    Solutions
+  </div>
+  <br><br>
+  <b><h4 style="color:blue; ">Differentiable on an Interval;One-Sided Derivatives</h4></b>
+  <p>
+    A function $y = f(x)$ is <b>differentiable on an open interval</b>(finite or infinite) if it has a derivative at each point of the interval.<br>
+    It is <b>differentiable on a closed interval</b> [a,b] if it is differentiable on the interior(a,b) and if the limits <br><br>
+    $lim_{h \to 0^+}$ $\dfrac{f(a+h)-f(a)}{h}$ &nbsp;&nbsp; <b>Right-hand deriative at a</b><br><br>
+    $lim_{h \to 0^-}$ $\dfrac{f(b+h)-f(b)}{h}$ &nbsp;&nbsp; <b>Left-hand deriative at b</b>
+  </p>
+  <br>
+  <em><h4 style="color:black; ">Derivatives at endpoints are one-sided limits.</h4></em>
+  <img src='img\week4_7.png'></img>
+  <br>
+  <div class="example">
+   <h3>Example 8</h3>
+   <p>
+     Show that the function $y = |x|$ is differentiable on $(-\infty,0)$ and $(0,\infty)$ but has
+     no derivative at x = 0.<br>
+   </p>
+   <button onclick="myFunction7()">Show the solution</button>
+   <div class="solutions" id="solutions8">
+    Solutions
+   </div>
+  </div>
+  <div class="example">
+   <h3>Example 9</h3>
+   <p>
+
+   </p>
+
+  </div>
+  <br>
+  <b><h4 style="color:blue; ">When Does a Function Not Have a Derivative at a Point?</h4></b>
+  <p>
+    A function has a derivative at a point $x_0$ if the slopes of the secant lines through $P(x_0,y_0)$ and a nearby point<br>
+    $Q$ on the graph approach a finite limit as $Q$ approaches $P$.<br><br>
+    Whenever the secants fail to take up a limiting position or become vertial as $Q$ approaches $P$ ,the derivative does not exist.
+  </p>
+  <img src='img\week4_8.png'></img>
+
+
+
+
+
+
+
+
+
+
+</div>
+
+
+<script>
+function myFunction() {
+  var x = document.getElementById('solutions1');
+  x.style.display = "block";
+
+}
+function myFunction1() {
+  var x = document.getElementById('solutions2');
+  x.style.display = "block";
+
+}
+function myFunction2() {
+  var x = document.getElementById('solutions3');
+  x.style.display = "block";
+
+}
+function myFunction3() {
+  var x = document.getElementById('solutions4');
+  x.style.display = "block";
+
+}
+function myFunction4() {
+  var x = document.getElementById('solutions5');
+  x.style.display = "block";
+
+}
+function myFunction5() {
+  var x = document.getElementById('solutions6');
+  x.style.display = "block";
+
+}
+function myFunction6() {
+  var x = document.getElementById('solutions7');
+  x.style.display = "block";
+
+}
+function myFunction7() {
+  var x = document.getElementById('solutions8');
+  x.style.display = "block";
+
+}
+</script>
+</div>
+
+
+</body>
+</html>
