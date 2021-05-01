@@ -52,6 +52,7 @@ MathJax = {
     <ul>
       <li>3.6 Chain rule</li>
       <ul>
+        <li>Theorem</li>
         <li>Intuitive proof of the chain rule</li>
         <li>Repeated Use of the Chain Rule</li>
         <li>Power Chain Rule</li>
@@ -83,7 +84,52 @@ MathJax = {
     </ul>
     <br>
     <div id="topic1">
+      <div id="topic1.1">
+      <div class="box">
+       <b><h3 style="color:blue;">THEOREM - The Chain Rule</h3></b>
+       <p>
+         If $f(u)$ is differentiable at the point $u$ = $g(x)$ and $g(x)$
+         is differentiable at $x$ , then the composite function $(f \circ g)'(x) = f'(g(x))*g'(x)$ .<br><br>
+         In Leibniz's notation , if $y = f(u)$ and  $u = g(x)$ then <br><br>
+         $\dfrac{dy}{dx} = \dfrac{dy}{du} * \dfrac{du}{dx}$ <br><br>
+         where dy/du is evaluated at $u = g(x)$.
 
+       </p>
+      </div>
+      <br>
+      <div class="example">
+        <h4>Example</h4>
+        $y = (3x^2+1)^2$ <br>
+        $y = f(u) = u^2 and u = g(x) = 3x^2+1$<br><br>
+        $\dfrac{dy}{du} * \dfrac{du}{dx} = 2u *6x = 2(3x^2 + 1)*6x = 36x^3 + 12x$
+      </div>
+    </div>
+      <br>
+      <div id="topic1.2">
+       <h3>Intuitive "Proof" of the Chain Rule</h3>
+       <p>
+         $ \triangle u = g(x + \triangle x) - g(x)$ <br>
+         $ \triangle y = f(u + \triangle u) - g(x)$ <br>
+
+         If $\triangle u \not= 0$ , we can write the fraction $\triangle y/ \triangle x$ as the product <br><br>
+         $\dfrac{\triangle y}{\triangle x} = \dfrac{\triangle y}{\triangle u} * \dfrac{\triangle u}{\triangle x}$ <br><br>
+         $\dfrac{dy}{dx} = lim_{\triangle x \to 0} \dfrac{\triangle y}{\triangle x} = lim_{\triangle x \to 0} \dfrac{\triangle y}{\triangle x} * \dfrac{\triangle u}{\triangle x} = lim_{\triangle x \to 0} \dfrac{\triangle y}{\triangle x} *lim_{\triangle x \to 0} \dfrac{\triangle u}{\triangle x} = lim_{\triangle u \to 0} \dfrac{\triangle y}{\triangle x} *lim_{\triangle x \to 0} \dfrac{\triangle u}{\triangle x} = lim_{\triangle x \to 0} \dfrac{\triangle y}{\triangle x} *lim_{\triangle x \to 0} = \dfrac{dy}{du} * \dfrac{du}{dx}   $
+         <br>
+         The problem with this argument is that it could be true that $\triangle u = 0$ even when $\triangle x not = 0$.
+         <br>
+         <img src='img\week5_1.png'></img>
+       </p>
+       <br>
+        <div class="example">
+          <p>
+           Differentiate $sin(x^2+x)$ with respect to x.<br>
+           We apply the Chain Rule  directly and find
+         </p>
+           <img src='img\week5_2.png'></img>
+        </div>
+
+
+      </div>
     </div>
 
 
